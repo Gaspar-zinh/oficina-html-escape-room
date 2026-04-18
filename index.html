@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room - Nível 1</title>
+    <style>
+        /* Estilo geral com tema "Hacker/Terminal" para imersão */
+        body {
+            background-color: #121212;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .painel {
+            border: 2px solid #00ff00;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+        }
+
+        h1 {
+            color: #ff004c;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .instrucoes {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .dica {
+            color: #888;
+            font-size: 14px;
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        /* O SEGREDO: Esse estilo só será ativado quando eles consertarem a tag! */
+        button {
+            background-color: #ff004c;
+            color: white;
+            font-size: 22px;
+            padding: 15px 40px;
+            border: 2px solid #ff004c;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #121212;
+            color: #ff004c;
+            box-shadow: 0 0 15px #ff004c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="painel">
+        <h1>Sistema Trancado</h1>
+        
+        <div class="instrucoes">
+            <p>Atenção, invasores! Vocês estão presos no Nível 1.</p>
+            <p>O painel de controle da porta principal sofreu um erro de sintaxe e o botão de fuga desapareceu do sistema.</p>
+        </div>
+
+        <buton onclick="window.location.href='Desafio2.html'">Destrancar Porta</buton>
+
+        <p class="dica">Dica do Sistema: Inspecione o código. O HTML tem regras rígidas. Se falta uma letra, a estrutura cai.</p>
+    </div>
+
+</body>
+</html>

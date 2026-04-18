@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>SALA 3 - O Mapa Corrompido</title>
+    <style>
+        body { background-color: #0d1117; color: #58a6ff; font-family: 'Courier New', monospace; text-align: center; }
+        .mapa-container { border: 2px dashed #58a6ff; padding: 20px; margin: 20px auto; width: 300px; min-height: 200px; }
+        table { margin: 20px auto; border-collapse: collapse; width: 80%; }
+        th, td { border: 1px solid #30363d; padding: 10px; }
+        .btn-proximo { background-color: #238636; color: white; padding: 15px; text-decoration: none; border-radius: 5px; display: none; }
+    </style>
+</head>
+<body>
+
+    <h1>SALA 3: Sistema de Navegação</h1>
+    <p>ERRO 404: Mapa de fuga não encontrado!</p>
+
+    <div class="mapa-container">
+        <img src="mapa.jpg" alt="Mapa Corrompido" id="mapaFuga" style="width: 100%;">
+    </div>
+
+    <h3>Coordenadas de Desbloqueio:</h3>
+    <table>
+        <tr>
+            <th>Setor</th>
+            <th>Código de Acesso</th>
+        </tr>
+        <tr>
+            <td>Norte</td>
+            <td>0011</td>
+        </tr>
+        <tr>
+            <td>SUL (SAÍDA)</td>
+            <td>2014</td>
+        </tr>
+    </table>
+
+    <div id="validador">
+        <input type="text" id="inputMapa" placeholder="Digite o código do Sul">
+        <button onclick="verificarMap()">Desbloquear Saída</button>
+    </div>
+
+    <script src="biblioteca_sistema/hello.py"></script>
+
+</body>
+</html>

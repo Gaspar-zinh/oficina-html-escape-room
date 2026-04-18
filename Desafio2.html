@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Escape Room HTML - Sala 2</title>
+    <style>
+        body { background-color: black; color: green; font-family: sans-serif; text-align: center; padding-top: 50px; }
+        .area-bloqueada { background-color: #151414; padding: 20px; border-radius: 10px; display: inline-block; }
+        
+        /* === DESAFIO 1: CLASSES DE COR === */
+        /* Crie uma classe .dica-verde que deixa o texto verde */
+        /* Crie uma classe .senha-vermelha que deixa o texto vermelho */
+
+        /* === CONFIGURAÇÃO INICIAL (NÃO MEXER) === */
+        input, button { padding: 10px 20px; font-size: 16px; margin: 10px; border-radius: 5px; border: 1px solid #555;}
+        input { background-color: #444; color: white; }
+        #painel-validador { border-top: 2px solid #555; margin-top: 30px; padding-top: 10px;}
+    </style>
+</head>
+<body>
+
+    <div class="area-bloqueada">
+        <h1>SALA 2: O Filtro de Dados</h1>
+        
+        <p>Procure a senha 'invisível' no código HTML. Ela está dentro de um parágrafo que não está sendo mostrado!</p>
+        
+        <p style="display: none;">Hash: <strong>617</strong></p>
+
+        <div id="painel-validador">
+            <p>Digite a senha encontrada:</p>
+            <input type="text" id="campoSenha" placeholder="Digite aqui">
+            <br>
+            
+            <button onclick="verificarSenha()" id="btnFugir">FUGIR DA SALA 2</button>
+        </div>
+    </div>
+
+    <script src="Biblioteca_sistema/Sistema.js"></script>
+
+</body>
+</html>

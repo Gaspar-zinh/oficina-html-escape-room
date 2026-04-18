@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>SALA FINAL - O Núcleo do Sistema</title>
+    <style>
+        /* Estilo Geral */
+        body { 
+            background-color: #000; 
+            color: #0f0; 
+            font-family: 'Courier New', monospace; 
+            padding: 20px; 
+            text-align: center; 
+            transition: all 1s ease;
+        }
+
+        .bloco-critico { 
+            border: 5px double #0f0; 
+            padding: 30px; 
+            margin: 50px auto; 
+            max-width: 700px;
+            background-color: #050505;
+        }
+
+        .erro-fatal { color: #ff0000; text-shadow: 0 0 10px red; }
+
+        table { margin: 20px auto; border-collapse: collapse; width: 100%; color: #0f0; border: 1px solid #0f0; }
+        th, td { border: 1px solid #0f0; padding: 12px; text-align: left; }
+
+        input { background: #111; border: 1px solid #0f0; color: #0f0; padding: 10px; margin: 10px; width: 80%; }
+        
+        button { 
+            background: #0f0; 
+            color: #000; 
+            border: none; 
+            padding: 15px 30px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+        }
+
+        button:hover { background: #0a0; }
+
+        /* Estilo do Certificado (Invisível no início) */
+        #certificado {
+            display: none; 
+            background: #000;
+            border: 10px double #0f0;
+            padding: 40px;
+            color: #0f0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
+            max-width: 800px;
+            box-shadow: 0 0 30px #0f0;
+            z-index: 100;
+        }
+
+        .carimbo {
+            border: 2px solid #0f0;
+            display: inline-block;
+            padding: 10px;
+            transform: rotate(-10deg);
+            margin-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Classe para esconder elementos após a vitória */
+        .ocultar { display: none !important; }
+
+        @media print {
+            button { display: none; }
+            #certificado { position: static; transform: none; width: 100%; border: 5px solid #000; color: #000; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="conteudo-jogo">
+        <h1 class="erro-fatal">SISTEMA CORROMPIDO: NÍVEL 5</h1>
+        <p>A reconstrução final exige que as tags abaixo sejam organizadas dentro do Bloco Crítico.</p>
+
+        <div class="bloco-critico">
+            <h1>NÚCLEO REESTABELECIDO</h1>
+            
+            <tabl>
+                <tr>SISTEMA
+                    <th></th>
+                                    <th></th> STATUS
+                </tr>
+                <tr>
+                    <td>PROPULSÃO</td>
+                    <td>ONLINE</td>
+                </tr>
+                <td>CÓDIGO MESTRE</td>
+                <tr>
+                    
+                    <td>EXECUTADO</td>
+                </tr>
+            </tabl>
+
+            <p>Digite seu nome para assinar o log de comando:</p>
+            <input type="text" id="nomePiloto" placeholder="Nome do Comandante">
+            
+            <br>
+            <button onclick="finalizarMissao()">[ ACIONAR SEQUÊNCIA DE FUGA ]</button>
+            </div>
+
+        <p><i>Dica: Se as tags não estiverem aninhadas corretamente, o sistema não reconhecerá o comando.</i></p>
+    </div>
+
+    <div id="certificado">
+        <h1 style="font-size: 2.5em;">MISSÃO CUMPRIDA</h1>
+        <hr style="border: 1px solid #0f0;">
+        <h2>CERTIFICADO DE MESTRE EM CÓDIGO FONTE</h2>
+        <p>Certificamos que o(a) Comandante <strong id="nomeNoCertificado">_______</strong> rompeu a criptografia das 5 salas e demonstrou domínio em estruturas HTML Avançadas.</p>
+        
+        <ul style="text-align: left; display: inline-block; list-style-type: '✔ ';">
+            <li>Aninhamento de Tabelas e Hierarquia</li>
+            <li>Gestão de Scripts e Atributos de Evento</li>
+            <li>Resolução de Erros de Sintaxe Críticos</li>
+            <li>Navegação entre Camadas do Sistema</li>
+        </ul>
+        
+        <br>
+        <div class="carimbo">SISTEMA RESTAURADO - PARABENS</div>
+        <p style="margin-top: 20px;">Brasília, DF | Instrutor: Andrei Bueno Ferraz de Moura Gaspar</p>
+        
+        <button onclick="window.print()">[ IMPRIMIR RECONHECIMENTO ]</button>
+    </div>
+
+    <script>
+        function finalizarMissao() {
+            const nome = document.getElementById('nomePiloto').value;
+
+            if (nome.trim() === "") {
+                alert("ERRO: O Comandante deve se identificar antes de prosseguir!");
+                return;
+            }
+
+            const confirmar = confirm("COMANDANTE " + nome.toUpperCase() + ", DESEJA FINALIZAR A OPERAÇÃO?");
+
+            if (confirmar) {
+                // Efeito visual de transição
+                document.getElementById('conteudo-jogo').classList.add('ocultar');
+                
+                // Insere o nome no certificado
+                document.getElementById('nomeNoCertificado').innerText = nome.toUpperCase();
+                
+                // Exibe o certificado
+                document.getElementById('certificado').style.display = 'block';
+                document.body.style.backgroundColor = '#000';
+                window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+            }
+        }
+    </script>
+
+</body>
+</html>
